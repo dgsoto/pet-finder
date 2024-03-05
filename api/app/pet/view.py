@@ -78,12 +78,11 @@ def get_pets():
         pets_data = pets_schema.dump(pets.items)
 
         # Fetch networks for each pet and add to pets_data
-        for pet_data in pets_data:
-            pet_id = pet_data["id"]
-            pet_networks = get_social_networks()
-            import pdb; pdb.set_trace()
-            print(pet_networks)
-            pet_data["networks"] = pet_networks.get("social_networks", [])
+        #for pet_data in pets_data:
+        #    pet_id = pet_data["id"]
+        #    pet_networks = get_social_networks()
+        #    print(pet_networks)
+        #    pet_data["networks"] = pet_networks.get("social_networks", [])
 
         # Build paginated response.
         response = {
