@@ -1,0 +1,161 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  width: 100%;
+  height: 100vh;
+}
+.container-logo,
+.container-form {
+  height: 100vh;
+}
+
+.container-logo {
+  width: 40%;
+}
+
+.container-form {
+  width: 60%;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-info {
+  width: 80%;
+ 
+  margin: auto;
+}
+
+.form-info h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8vmax;
+
+  font-style: normal;
+  letter-spacing: 3px;
+
+  margin-top: 3vh;
+}
+
+.form-info p, .form-info a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3vmax;
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.link {
+  color: #ff5722;
+  text-decoration: underline;  
+}
+
+
+.registerForm {
+  width: 80%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loginForm{
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.btn-container {
+  width: 80%;
+  margin: auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+
+
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+  z-index: 5;
+  background-color: #ff5722;
+
+  text-align: center;
+}
+
+.wave-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  transform: translateY(50%);
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid #757575;
+  border-radius: 0;
+}
+
+.input::placeholder {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 3px;
+}
+
+.suggested-username {
+  display: none;
+  color: #ff5722;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+
+.btn{
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1vmax;
+  font-weight: 500;
+  color: white;
+  font-style: normal;
+  
+  letter-spacing: 0.1em;
+
+  background-color: #ff5722;
+  border-radius: 15px;
+  border: none;
+  border: 2px solid #ff5722;
+
+  width: 11vw;
+}
+
+
+.btn:hover{
+  background-color: #ff9800;
+  border: 2px solid #ff5722;
+  color: white;
+  
+}
+
+.btn-cancelar{
+  background-color: white;
+  color: black;
+}

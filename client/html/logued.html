@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="shortcut icon" href="../img/pawprint.png" type="image/x-icon">
+    <title>PetFinder</title>
+
+    <!-- Enlace a bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Enlace a swipper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Enlace a hojas de estilo -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Enlace a js -->
+    <script src="../js/logued.js" defer></script>
+    <script src="../js/slide.js"></script>
+    
+  </head>
+  <body>
+    <!------------------------------------ Header: navBar SOLE -->
+    <header class="header" id="header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mb-2 mb-lg-0 w-100 d-flex">
+              <div class="d-flex w-75">
+                <li class="nav-item me-5">
+                  <a class="nav-link active" aria-current="page" href="#home"
+                    >Inicio</a
+                  >
+                </li>
+                <li class="nav-item me-5">
+                  <a class="nav-link" href="#post">Buscados</a>
+                </li>
+                <li class="nav-item me-5">
+                  <a class="nav-link" href="#map">Mapa</a>
+                </li>
+                <li class="nav-item me-5">
+                  <a class="nav-link" href="#us">Nosotros</a>
+                </li>
+              </div>
+
+              <li class="nav-item dropdown align-items-end">
+                <a
+                  id="usuarioDropdown"
+                  class="nav-link dropdown-toggle "
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <!-- Se agrega nombre de usuario desde js -->
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Configurar</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#" onclick="cerrarSesion()"
+                      >Cerrar Sesión</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!------------------------------------ Fin Header -->
+    <!-------------------------------------  Main -->
+    <main class="main">
+      <section class="main-home" id="home">
+        <!-- Inicio: Sole -->
+        <div class="home-info">
+          <h1>¡Bienvenidos a PETFINDER!</h1>
+          <h2>Encuentra y reúnete con mascotas perdidas.</h2>
+
+          <p>
+            ¡Sumate a <span>PETFINDER</span> hoy y permite que la magia de la
+            reunión comience!
+          </p>
+
+          <div class="home-btns">
+            <button class="btn btn-publicar w-50" onclick="abrirPublicacion()">
+              Publicar
+            </button>
+          </div>
+        </div>
+        <div class="home-img-container">
+          <img
+            src="../img/pet-finder-web-app.jpg"
+            class="img-fluid home-img"
+            alt="..."
+          />
+        </div>
+      </section>
+
+      <section class="main-post" id="post">
+        <!--  Post: Sole-->
+        <div class="post-info">
+          <h2>¡Ayúdanos a reunir a estos amigos peludos!</h2>
+          <p>
+            En nuestra sección de "Buscados", te presentamos a estas adorables
+            mascotas que están buscando desesperadamente a sus dueños. Cada uno
+            tiene una historia única y está ansioso por regresar a casa.
+          </p>
+        </div>
+        <!-- Carrousel de Swipper -->
+        <div class="container">
+          <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper mt-5">
+              
+              <!-- Acá se cargan las tarjetas dinamicamente -->
+              
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <center>
+              <!-- Botón para la página siguiente -->
+              <button class="next-page-btn">Siguiente</button>            
+              <!-- Botón para la página anterior -->
+              <button class="prev-page-btn">Anterior</button>
+            </center>
+
+          </div>
+        </div>
+        <!-- fin carrousel -->
+      </section>
+
+      <section class="main-map" id="map">
+        <!-- Map: Luz -->
+        <div
+          class="container-fluid position-relative bg-secondary-subtle object-fit-cover"
+        >
+          <img
+            src="../img/mapa.png"
+            alt="map"
+            id="map"
+            class="img-fluid ratio ratio-16x9 mx-auto d-block"
+          />
+          <h2
+            class="textosecundario d-block position-absolute top-50 start-0 fw-bold display-5 ps-5"
+          >
+            Explora y encuentra cerca de Ti!
+          </h2>
+        </div>
+
+        <div class="curve">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 600">
+            <path
+              fill="#ff9800"
+              fill-opacity="1"
+              d="M0,128L80,122.7C160,117,320,107,480,85.3C640,64,800,32,960,37.3C1120,43,1280,85,1360,106.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            ></path>
+          </svg>
+          <p class="text-center text-white fs-6 text p-3">
+            En nuestra sección de mapas, te invitamos a explorar las ubicaciones
+            exactas donde se han reportado mascotas perdidas o encontradas. Este
+            mapa interactivo te proporciona una visión geográfica de la búsqueda
+            en curso. <br />
+            <strong
+              >¡Descubre historias conmovedoras y únete a la comunidad en
+              acción!</strong
+            >
+          </p>
+        </div>
+      </section>
+      <section class="main-us" id="us">
+        <!-- About: Luz -->
+        <div class="container textosecundario pt-4 mt-4 mb-4">
+          <div class="text-center">
+            <h1 class="display-4 fw-bold mt-5">¡Bienvenidos a PetFinder!</h1>
+            <p class="p-3 fs-5 text">
+              En <span class="coloracento fw-bold">PetFinder</span>, entendemos
+              lo importante que son tus mascotas para ti. Nuestra misión es
+              ayudarte a reunirte con tus seres queridos peludos perdidos y
+              brindar apoyo a la comunidad de amantes de los animales.
+            </p>
+          </div>
+          <h2 class="text-start align-items-md-start">¿Cómo funciona?</h2>
+          <ul class="list-group list-group-flush pb-3">
+            <li class="list-group-item">
+              <img src="../img/pawprint.png" alt="pawprint" width="40px" /><span
+                class="textosecundario"
+              >
+                <b> Regístrate: </b> Crea tu perfil y comparte detalles sobre tu
+                mascota.</span
+              >
+            </li>
+            <li class="list-group-item">
+              <img src="../img/pawprint.png" alt="pawprint" width="40px" /><span
+                class="textosecundario"
+              >
+                <b> Búsqueda Simple:</b> Explora mascotas perdidas cercanas a tu
+                ubicación.</span
+              >
+            </li>
+            <li class="list-group-item">
+              <img src="../img/pawprint.png" alt="pawprint" width="40px" /><span
+                class="textosecundario"
+              >
+                <b> Notificaciones Instantáneas: </b> Recibe notificaciones
+                cuando haya coincidencias con mascotas encontradas.</span
+              >
+            </li>
+            <li class="list-group-item">
+              <img src="../img/pawprint.png" alt="pawprint" width="40px" /><span
+                class="textosecundario"
+              >
+                <b> Comunidad Solidaria: </b> Conéctate con otros amantes de los
+                animales para compartir información y brindar apoyo.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- Fin Main -->
+
+    <!-- Footer: LUZ -->
+    <footer
+      class="footer d-flex flex-row flex-wrap align-items-center p-3 text-secondary"
+    >
+      <div class="col-1 text-end">
+        <img
+          src="../icons/c-circle.svg"
+          class="filter"
+          role="img"
+          alt="copyright"
+          width="32"
+          height="32"
+          fill="currentColor"
+        />
+      </div>
+      <div
+        class="col-9 align-content-center pt-2 ps-1 justify-content-start text-start"
+      >
+        <p class="fs-6 text text-white">Todos los Derechos Reservados</p>
+      </div>
+      <div class="col justify-content-around p-2">
+        <a
+          href="https://www.instagram.com/petfinder-buscador-de-mascotas/"
+          target="_blank"
+          ><img
+            class="text-white filter me-3"
+            src="../icons/instagram.svg"
+            role="img"
+            alt="instagram"
+            width="32"
+            height="32"
+            fill="currentColor"
+        /></a>
+        <!--red social-->
+        <a href="https://www.facebook.com/petfinder.net" target="_blank"
+          ><img
+            class="text-white filter me-3"
+            src="../icons/facebook.svg"
+            role="img"
+            alt="facebook"
+            width="32"
+            height="32"
+            fill="currentColor"
+        /></a>
+        <!--red social-->
+        <a
+          href="https://www.twitter.com/petfinder-buscador-de-mascotas"
+          target="_blank"
+          ><img
+            class="text-white filter me-3"
+            src="../icons/twitter-x.svg"
+            role="img"
+            alt="twitter"
+            width="32"
+            height="32"
+            fill="currentColor"
+        /></a>
+      </div>
+      <!--red social-->
+    </footer>
+    <!-- Fin Footer -->
+     
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title " id="exampleModalLabel" ></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!--Modal body-->
+        <div class="modal-body container">
+            <div class="row mt-3">
+                <!-- columna de la imagen -->
+                <div class="col-md-6 mb-3">
+                    <img class="img-fluid" src="../img/01-mascota.jpg" alt="" loading="lazy">
+                    <h6 class="text-center"></h6>
+
+                    <!-- Uso imagen de muestra, debería ir la que trae del backend -->
+                </div>
+
+                <!-- columna de los campos del formulario -->
+                <div class="col-md-6 ">
+                          
+                    <p id="petName" class="fw-bold"></p>
+                    <p id="petBreed" class="fw-bold"></p>
+                       
+                          <p id="petLocation" class="fw-bold"></p>
+                          
+                          <p id="petAge" class="fw-bold"></p>
+                          
+                          <p id="petSize" class="fw-bold"></p>
+                          
+                          <p id="petType" class="fw-bold"></p>
+                   
+                </div>
+                
+            </div>  
+            <div class="contacts my-5">
+              <a href="#"><img src="../icons/facebook.svg" alt=""></a>
+              <a href="#"><img src="../icons/instagram.svg" alt=""></a>
+              <a href="#"><img src="../icons/whatsapp.svg" alt=""></a>
+              <a href="#"><img src="../icons/email.png" alt=""></a>
+            </div>    
+              
+            
+            
+          </div>   
+
+            </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Enlace a Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Swiper JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+  
+</html>
