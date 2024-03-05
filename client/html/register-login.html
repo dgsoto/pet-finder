@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/register-login.css" />
+    
+    <link rel="shortcut icon" href="../img/pawprint.png" type="image/x-icon">
+    <title>Petfinder </title>
+  </head>
+  <body class="body">
+    <div class="container-logo ">
+         <div class="wave">
+            <img src="../img/logo.png" class="img-fluid wave-img" alt="Logo Petfinder" />
+        </div>  
+    </div> 
+    <div class="container-form">              
+          <div class="form-info">
+            <h2></h2>
+            <p></p><a href="#" class="link" ></a>
+          </div>
+          <!-- Formulario de Registro -->
+          <form  method="post" id="registerForm" class="registerForm">
+                 
+                  <input type="text" class="form-control input" id="apellido" placeholder="Apellido" required>
+                  <input type="text" class="form-control input" id="nombre" placeholder="Nombre" required>
+                  <div>
+                    <input type="text" class="form-control input" id="user" placeholder="Nombre de usuario" required>
+                    <div id="suggestedUsername" class="suggested-username"></div>
+                  </div>
+                  <input type="email" class="form-control input" id="correo" placeholder="Correo Electrónico" required>
+                  <input type="text" class="form-control input" id="domicilio" placeholder="Domicilio" required>
+                  <input type="password" class="form-control input" id="password" placeholder="Contraseña" required>
+                  <div class="mb-3">
+                    <input type="password" class="form-control input" id="confirmPassword" placeholder="Confirmar Contraseña" required>
+                    <div id="passwordError" class="error-message"></div>
+                  </div>
+              
+                  <div class="btn-container">
+                    <button type="submit" class="btn">Registrarme</button>
+                    <button class="btn btn-cancelar" onclick="cancelar()">Cancelar</button>
+                  </div>
+                  
+          </form>
+
+          <!-- Formulario de Inicio de Sesión -->
+          <form method="post" id="loginForm" class="loginForm hidden">
+              
+              
+              <input type="text" class="form-control input" id="user_log" placeholder="Nombre de usuario" required>
+                 
+                  <input type="password" class="form-control input" id="psw_log" placeholder="Contraseña" required>
+                  <div class="btn-container">
+                    <button type="submit" class="btn">Ingresar</button>
+                    <button class="btn btn-cancelar" onclick="cancelar()">Cancelar</button>
+                  </div>
+            
+          </form>
+      </div>
+  </div>
+
+
+  <script src="../js/register.js"></script>
+  <script src="../js/login.js"></script>
+            
+          
+   
+  </body>
+</html>
