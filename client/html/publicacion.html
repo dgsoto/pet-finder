@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    
+    <link rel="shortcut icon" href="../img/pawprint.png" type="image/x-icon">
+    <title>PetFinder - Avisos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--Link a CSS-->
+    <link rel="stylesheet" href="../css/publicacionStyle.css" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <main class="main">
+      <div class="container d-flex flex-column ">
+        <h1 class="titulo display-6 fw-medium text-center py-3">Crea tu aviso</h1>
+
+        <div class="container">
+          <form method="post" class="formulario" id="formulario">
+            <div class="card">
+              <div class="row">
+                <div
+                  class="col-md-6 d-flex align-items-center justify-content-center logo"
+                >
+                  <img
+                    src="../img/logo.png"
+                    class="picturePet img-fluid w-100 "
+                    accept="image/*"
+                    id="display_image"
+                    loading="lazy"
+                    alt=""
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <div class="card-body p-3">
+                    <div class="input-group mb-3 mt-4">
+                      <select class="form-select" id="type" name="type">
+                        <option selected>Elegi...</option>
+                        <option value="Wanted">Buscado</option>
+                        <option value="Found">Encontrado</option>
+                      </select>
+                      <!--  <label class="input-group-text" for="type">Options</label> -->
+                    </div>
+                    <div
+                      class="input-group text-secondary w-100 justify-content-center mb-3"
+                    >
+                      <input
+                        type="file"
+                        class="form-control text-secondary"
+                        required
+                        name="picturePet"
+                        id="picturePet"
+                        aria-describedby="file"
+                        value="imagen_de_mascota"
+                        aria-label="Upload"
+                        accept="image/*"
+                        onchange="displayImage()"
+                      />
+                    </div>
+                    <div class="row g-3 mb-3">
+                      <div class="col">
+                        <input
+                          type="datetime-local"
+                          name="date_lost"
+                          required
+                          class="form-control"
+                          placeholder="Fecha"
+                          id="date_lost"
+                          aria-label="fecha"
+                        />
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          name="location"
+                          class="form-control"
+                          required
+                          placeholder="Zona"
+                          id="location"
+                          aria-label="Zona"
+                        />
+                      </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          name="namePet"
+                          minlength="2"
+                          placeholder="Nombre de Mascota"
+                          id="namePet"
+                          aria-label="mascota"
+                        />
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          name="breed"
+                          placeholder="Raza"
+                          id="breed"
+                          aria-label="raza"
+                        />
+                      </div>
+                    </div>
+                    <div class="row g-3 mb-3">
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          name="age"
+                          placeholder="Edad de Mascota"
+                          id="age"
+                          aria-label="Edad_de_Mascota"
+                        />
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          name="size"
+                          placeholder="Tamaño"
+                          id="size"
+                          aria-label="size"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text">Redes Sociales</span>
+                      <input
+                        type="text"
+                        aria-label="Facebook"
+                        class="form-control"
+                        id="facebook"
+                        name="facebook"
+                      />
+                      <input
+                        type="text"
+                        aria-label="Instagram"
+                        class="form-control"
+                        id="instagram"
+                        name="instagram"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <textarea
+                        class="form-control"
+                        id="description"
+                        rows="4"
+                        placeholder="Descripcion"
+                        aria-label="descripcion"
+                        name="description"
+                      ></textarea>
+                    </div>
+                    <div class="input-group mb-5">
+                      <span class="input-group-text">#</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="hashtags"
+                        placeholder="Etiquetas"
+                        name="hashtags"
+                        id="hashtags"
+                        aria-label="Etiquetas"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
+                    <div class="botonPet mb-3">
+                      <button
+                        type="submit"
+                        value="submit"
+                        name="submit"
+                        class="btns"
+                      >
+                        Guardar
+                      </button>
+                      <button
+                        type="reset"
+                        value="reset"
+                        class="btns"
+                        onclick="cancelarRegistro()"
+                      >
+                        Cancelar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/registrarPet.js"></script>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+/* Paleta de colores */
+/*  Color principal:#FF9800 (Naranja Claro)
+    Color Acento: #FF5722 (Naranja Oscuro)
+    Color  Text secundario: #757575 (Gris clarito)
+    Color texto primario: #212121 (Gris oscuro)
+    Color Acento: #FF5722 (Naranja Oscuro)
+    Color texto primario: #212121 (Gris oscuro)
+*/
+
+/* Fuentes */
+/* h1 */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Botones */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Texto General */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bevan:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+  padding: 3vh;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1vmax;
+  font-weight: 400;
+  font-style: normal;
+  z-index: 10;
+}
+
+.navbar {
+  padding: 0 10vw;
+  width: 100%;
+  list-style-type: none;
+}
+
+.navbar-nav .nav-item.active {
+  border-bottom: 3px solid #ff5722;
+  font-weight: bolder;
+}
+
+
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1vmax;
+  font-weight: 500;
+  color: white;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  background-color: #ff5722;
+  border-radius: 15px;
+  border: none;
+  border: 2px solid #ff5722;
+
+  width: 20vw;
+}
+
+#btn-registro {
+  display: none;
+  width: fit-content;
+
+}
+
+
+ 
+.main {
+  width: 100%;
+  /*  height:90vh; */
+}
+
+.main-home {
+  height: 100vh;
+  width: 60%;
+  right: 0;
+
+  display: flex;
+}
+
+.main-home:target,
+.main-post:target,
+.main-map:target,
+.main-us:target {
+  padding-top: 60px;
+}
+
+.home-info {
+  flex: 1;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 8vw;
+  width: 45%;
+
+  z-index: 7;
+}
+
+.home-info h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3vmax;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 3px;
+}
+
+.home-info h2,
+.post-info h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.8vmax;
+
+  font-style: normal;
+  letter-spacing: 3px;
+
+  margin-top: 3vh;
+}
+
+.home-info p,
+.post-info p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3vmax;
+  margin-top: 7vh;
+}
+
+.home-info p span {
+  color: #ff5722;
+  font-weight: bolder;
+}
+
+.home-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+
+  width: 60%;
+
+  height: 25vh;
+  align-self: self-start;
+}
+
+.btn-logIn {
+  background-color: white;
+  color: black;
+  border: 2px solid #ff5722;
+}
+
+.btn:hover{
+  background-color: #ff9800;
+  border: 2px solid #ff5722;
+  color: white;
+  
+}
+
+.home-img-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  border-top-left-radius: 30%;
+  border-bottom-left-radius: 30%;
+  z-index: 5;
+
+  display: flex;
+  
+}
+
+.home-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.main-post {
+  height: 100vh;
+}
+
+
+.main-post h2,
+.main-post p {
+  text-align: center;
+}
+
+.main-post h2 {
+  margin-top: 10vh;
+  margin-bottom: 0;
+  color: #ff5722;
+}
+
+.main-post p {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 5vh;
+  
+}
+
+.btn-publicar{
+
+  width: fit-content;
+  margin: 15px auto;
+  display: block; /* PONER EN  NONE Debe cambiar a block cuando el usuario está registrado */
+  margin-top: 5px;
+}
+
+.main-map {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   
+  height: 100vh;
+
+ 
+}
+
+.main-us {
+  height: 90vh;
+}
+
+.container {
+  width: 90%;
+  padding: 10px 40px;
+  
+}
+.container .swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.container .swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border-radius: 15px;
+  text-align: start;
+  box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+  border: 2px solid #ff9800;
+}
+.container .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.container .swiper-slide .card-description {
+  padding: 1rem 1rem;
+  background-color: hsl(36, 100%, 50%);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  
+}
+.container .swiper-slide .card-title,
+.container .swiper-slide .card-text {
+  margin-bottom: 0.5rem;
+}
+.container .swiper-slide .card-link {
+  text-align: center;
+}
+.container .swiper-slide .card-text p{
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+
+}
+
+.container .swiper-slide .card-link button {
+  text-decoration: none;
+  font-size: 13px;
+ 
+
+}
+
+.swiper-slide{
+  max-width: 280px; margin: 0 10px;
+}
+
+.btn-link{
+  width: fit-content;
+  background-color: #ff5722;
+  color: white;
+  display: block; /* PONER EN  NONE Debe cambiar a block cuando el usuario está registrado */
+  margin: auto;
+  padding: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev  {
+  right: 8% !important;
+  top: 160vh;
+  color: #ff5722;
+}
+
+.swiper-button-prev{
+  left: 8% !important;
+}
+
+
+
+.main-map {
+  position: relative;
+  
+}
+
+.curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 250px; 
+  z-index: 2;
+}
+
+.curve svg{
+  position: absolute;
+  top: -20vh;
+ 
+}
+
+.curve p{
+  position: relative;
+ transform: translateY(70%);
+ width: 50%;
+ margin: auto;
+ font-family: "Open Sans", sans-serif;
+  font-size: 1.3vmax;
+}
+
+
+.textosecundario {
+  color: #757575;
+}
+
+.coloracento {
+  color: #ff5722;
+}
+
+.filter {
+  filter: invert(51%) sepia(96%) saturate(779%) hue-rotate(0deg) brightness(103%) contrast(104%);
+}
+
+.footer {
+  background-color: #ff5722;
+  bottom: 0;
+}
+
+/* ---------Modal */
+
+.modal-content{
+  font-family: "Open Sans", sans-serif;
+}
+
+.contacts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.no-border{
+  border: none;
+
+}
+
+#petType{
+  color: #ff5722;
+  text-align: center;
+}
